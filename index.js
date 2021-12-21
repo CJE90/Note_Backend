@@ -38,6 +38,7 @@ let notes = [
     }
 ]
 app.get('/', (request, response) => {
+    console.log("firing from root")
     response.send('<h1>Hello World!</h1>')
 })
 
