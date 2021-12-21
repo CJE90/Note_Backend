@@ -43,6 +43,7 @@ app.get('/', (request, response) => {
 })
 
 app.get('/api/notes', (request, response) => {
+    console.log("Accessing notes")
     response.json(notes)
 })
 
@@ -93,6 +94,7 @@ app.post('/api/notes', (request, response) => {
 })
 
 const unknownEndpoint = (request, response) => {
+    console.log("an unknown endpoint is specified")
     response.status(404).send({ error: 'unknown endpoint' })
 }
 
@@ -101,4 +103,5 @@ app.use(unknownEndpoint)
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
+    console.log("Endpoint should be reachable now")
 })
